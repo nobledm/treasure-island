@@ -1,0 +1,124 @@
+@import 'init/reboot';
+@import 'typography/type';
+
+/* GENERAL */
+body {
+    width: 60rem;
+    margin: 1.5rem auto 0;
+}
+
+.no-webp body { background: url('../img/exclusivepaper.jpg'); }
+.webp body { background: url('../img/exclusivepaper.webp'); }
+
+section {
+    position: relative;
+    margin-bottom: 9rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* General Content */
+.card {
+    position: relative;
+    padding: 1.5rem;
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: -0.5rem 1rem 1.5rem -1rem rgba(90, 89, 83, 0.6);
+    
+    p {
+        padding-right: 1.5rem;
+    }
+
+    &:after {
+        content: url('../img/corner.png');
+        position: absolute;
+        bottom: 0;
+        right: 4px;
+    }
+}
+.no-webp .card { background: url('../img/ricepaper.jpg'); }
+.webp .card { background: url('../img/ricepaper.webp'); }
+
+.card-img {
+    max-width: 40%;
+    opacity: 0.8;
+}
+
+.title-icon {
+    position: absolute;
+    top: -3.8rem;
+    left: -5.5rem;
+}
+
+.section-title {
+    flex: 0 0 100%;
+}
+/* END GENERAL */
+
+/* HEADER */
+.site-header {
+    background: url('../img/boat.jpg');
+    margin-bottom: 12.3rem;
+    box-shadow: -0.5rem 1rem 1.5rem -1rem rgba(90, 89, 83, 0.6);
+
+    p {
+        width: 32.8rem;
+    }
+
+    .card {
+        padding-bottom: 1.2rem;
+        box-shadow: none;
+    }
+}
+
+/* PLOT SUMMARY */
+.summary .card,
+.characters .card {
+    width: calc((100% - 2rem) / 2);
+}
+
+.part-num {
+    display: block;
+    opacity: 0.5;
+}
+
+/* BACKGROUND */
+.background .card {
+    padding-right: 0.5rem;
+
+    column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+
+    column-gap: 3.6rem;
+    -webkit-column-gap: 3.6rem;
+    -moz-column-gap: 3.6rem;
+}
+
+/* CHARACTERS */
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hover-details {
+    position: absolute;
+    opacity: 0;
+}
+
+.hover-details:hover {
+    opacity: 1;
+}

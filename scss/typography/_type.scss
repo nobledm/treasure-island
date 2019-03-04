@@ -1,0 +1,35 @@
+@import '../mixins/index';
+@import 'fonts/fonts';
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative');
+
+$default-face: 'TextGyreHeros', sans-serif;
+$title-face: 'Cinzel Decorative', cursive;
+$leander-face: 'Leander', 'Garamond', serif;
+
+/* GENERAL */
+body { 
+    @include text-styling($default-face, 100%, 1.5); 
+    color: rgb(70, 48, 22);
+}
+
+h1 { 
+    @include text-styling($title-face, 5.61rem, 6rem);
+    padding: 2.5rem 0 0 3rem;
+    margin: 0 0 30.5rem; /*568*/
+}
+
+h2 { 
+    @include text-styling($title-face, 3.157rem, 4.5rem); 
+}
+
+h4 { 
+    @include text-styling($leander-face, 1.7777rem, 3rem); 
+    color: rgb(122, 107, 82);
+}
+
+.drop-cap { 
+    @include text-styling($leander-face, 3.157rem, 1.5rem); 
+    float: left;
+    margin-top: 0.95rem;
+    padding-right: 0.3rem;
+}
