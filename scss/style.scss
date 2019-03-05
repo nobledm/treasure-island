@@ -4,7 +4,8 @@
 /* GENERAL */
 body {
     width: 60rem;
-    margin: 1.5rem auto 0;
+    margin: 0 auto 0;
+    padding: 1.5rem 0;
 }
 
 .no-webp body { background: url('../img/exclusivepaper.jpg'); }
@@ -12,14 +13,15 @@ body {
 
 section {
     position: relative;
-    margin-bottom: 9rem;
+    margin-bottom: 7.5rem;
 }
 
 p {
     margin-bottom: 1.5rem;
 }
 
-p:last-of-type {
+p:last-of-type,
+section:last-of-type {
     margin-bottom: 0;
 }
 
@@ -36,6 +38,7 @@ p:last-of-type {
     padding-bottom: 3rem;
     margin-bottom: 3rem;
     box-shadow: -0.5rem 1rem 1.5rem -1rem rgba(90, 89, 83, 0.6);
+    overflow: hidden;
     
     p {
         padding-right: 1.5rem;
@@ -51,7 +54,7 @@ p:last-of-type {
 .no-webp .card { background: url('../img/ricepaper.jpg'); }
 .webp .card { background: url('../img/ricepaper.webp'); }
 
-.card-img {
+.parrot {
     max-width: 40%;
     opacity: 0.8;
 }
@@ -70,7 +73,7 @@ p:last-of-type {
 /* HEADER */
 .site-header {
     background: url('../img/boat.jpg');
-    margin-bottom: 12.3rem;
+    margin-bottom: 10.8rem;
     box-shadow: -0.5rem 1rem 1.5rem -1rem rgba(90, 89, 83, 0.6);
 
     p {
@@ -102,23 +105,40 @@ p:last-of-type {
     -webkit-column-count: 2;
     -moz-column-count: 2;
 
-    column-gap: 3.6rem;
-    -webkit-column-gap: 3.6rem;
-    -moz-column-gap: 3.6rem;
+    column-gap: 3.61rem;
+    -webkit-column-gap: 3.61rem;
+    -moz-column-gap: 3.61rem;
 }
 
 /* CHARACTERS */
+.char-name {
+    text-align: center;
+}
+
+.mask,
+.hover-details,
+.characters .card::after {
+    transition-duration: 0.5s;
+}
+
 .mask {
     position: absolute;
-    top: 0;
+    top: 4.5rem;
     left: 0;
 }
 
 .hover-details {
-    position: absolute;
     opacity: 0;
 }
 
-.hover-details:hover {
-    opacity: 1;
+.characters .card::after {
+    opacity: 0;
+}
+
+.characters .card:hover {
+    > .hover-details { opacity: 1; }
+
+    > .mask { opacity: 0.2; }
+
+    &::after { opacity: 1; }
 }
